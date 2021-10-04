@@ -1,0 +1,20 @@
+:root {
+  --mainColor: red;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  /*尝鲜特性，换算成rgba*/
+  background-color: color(var(--mainColor) alpha(-50%));
+}
+
+/*尝鲜特性，自定义的媒体查询和<=运算符*/
+@custom-media --small-viewport (width <= 30em);
+
+@media(--small-viewport) {
+  body {
+    background-color: color(green alpha(-50%));
+  }
+}
